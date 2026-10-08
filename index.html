@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitosyn 시작 가이드</title>
+<meta name="description" content="Mitosyn 고객 온보딩 가이드 — 웹앱 사용법, Claude·ChatGPT 커넥터 연결, 데이터 준비, 결과 읽는 법, 요금제, 개인정보, 모델과 데이터 출처.">
+<meta name="theme-color" content="#6C5DD3">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Mitosyn">
+<meta property="og:title" content="Mitosyn 시작 가이드">
+<meta property="og:description" content="수면다원검사(PSG)·웨어러블 EEG 자동 판독 소프트웨어 Mitosyn의 사용 가이드. 연구·의사결정 보조용이며 진단을 대체하지 않습니다.">
+<meta property="og:image" content="assets/img/webapp-analysis-top.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b4fd8'/%3E%3Cstop offset='1' stop-color='%237b5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='34' fill='%23fff'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="topbar">
+  <button class="nav-toggle" type="button" aria-controls="sidenav" aria-expanded="false">목차</button>
+  <a class="brand" href="#top"><span class="logo" aria-hidden="true">M</span>Mitosyn <small>시작 가이드</small></a>
+  <span class="spacer"></span>
+  <a class="cta" href="https://mcp.mitosyn.ai">웹앱 열기</a>
+</header>
+
+<div class="layout" id="top">
+  <nav class="sidenav" id="sidenav" aria-label="가이드 목차">
+    <ol>
+      <li><a href="#start">시작하기</a></li>
+      <li><a href="#webapp">웹앱 사용법</a></li>
+      <li><a href="#connector">Claude·ChatGPT 연결</a></li>
+      <li><a href="#data">데이터 준비</a></li>
+      <li><a href="#results">결과 읽는 법</a></li>
+      <li><a href="#pricing">요금제와 결제</a></li>
+      <li><a href="#privacy">개인정보와 보안</a></li>
+      <li><a href="#feedback">피드백과 문제 신고</a></li>
+      <li><a href="#model">모델과 데이터 출처</a></li>
+      <li><a href="#faq">자주 묻는 질문·문의</a></li>
+    </ol>
+    <p class="nav-foot">연구·의사결정 보조용이며 진단을 대체하지 않습니다.<br><a href="mailto:hello@mitosyn.ai">hello@mitosyn.ai</a></p>
+  </nav>
+
+  <main id="main">
+    <div class="content">
+
+      <section class="doc" id="start" aria-labelledby="h-start">
+        <p class="eyebrow">MITOSYN 시작 가이드 <span class="badge">출시 준비 중 (베타)</span></p>
+        <h1 id="h-start">수면 기록을 올리면, 판독 초안과 리포트가 나옵니다</h1>
+        <p class="lead">Mitosyn은 밤사이 수면다원검사(PSG)와 웨어러블 EEG 기록을 자동으로 판독(스코어링)하고 ‘뇌 건강 리포트’를 만들어 주는 소프트웨어입니다. 웹앱에서 바로 쓰거나 Claude·ChatGPT에 커넥터로 연결해 대화 중에 사용할 수 있습니다.</p>
+
+        <div class="callout warn" role="note">
+          <strong>꼭 알아두세요</strong>
+          <p>Mitosyn은 <b>연구·의사결정 보조용이며 진단을 대체하지 않습니다.</b> 의료기기가 아니며, 모든 결과는 의사의 검토가 필요합니다.</p>
+          <p>현재 서비스는 <b>출시 준비 중(베타)</b>입니다. 정식 출시 전까지 화면과 기능이 바뀔 수 있습니다.</p>
+        </div>
+
+        <h2>세 단계로 시작하기</h2>
+        <ol class="steps">
+          <li>
+            <h3>가입</h3>
+            <p><a href="https://mcp.mitosyn.ai">mcp.mitosyn.ai</a>에서 GitHub 계정으로 로그인합니다. Free 플랜으로 바로 시작합니다.</p>
+          </li>
+          <li>
+            <h3>샘플 체험</h3>
+            <p>데모 샘플(정상·중증 수면무호흡·저품질)을 골라 결과 화면을 미리 봅니다. 샘플은 로그인 없이, 횟수 제한 없이 쓸 수 있습니다.</p>
+          </li>
+          <li>
+            <h3>내 기록 분석</h3>
+            <p><a href="#data">가명 처리된 EDF 기록</a>의 경로나 URL을 입력해 분석합니다. 결과는 반드시 의사가 검토합니다.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="doc" id="webapp" aria-labelledby="h-webapp">
+        <h2 id="h-webapp">웹앱 사용법</h2>
+        <p>웹앱(<a href="https://mcp.mitosyn.ai">https://mcp.mitosyn.ai</a>)은 채팅처럼 사용합니다. 입력창에 기록 경로를 입력하거나 데모 샘플을 고르면, 분석 과정과 결과가 대화 속에 차례로 표시됩니다.</p>
+
+        <div class="fig-split">
+          <figure>
+            <img src="assets/img/webapp-mobile.png" width="390" height="844" alt="모바일 웹앱 첫 화면. ‘어떤 수면 기록을 분석할까요?’ 안내 아래에 정상 수면 샘플, 중증 수면무호흡 샘플, 저품질 기록 샘플, 내 기록 분석하기 카드와 입력창이 있다.">
+            <figcaption>첫 화면(모바일 예시). 샘플 카드를 누르거나 입력창에 기록을 입력합니다.</figcaption>
+          </figure>
+          <div>
+            <h3 style="margin-top:0">1. 분석 시작</h3>
+            <ul>
+              <li><b>샘플로 체험:</b> 정상 수면(<code>sample-normal</code>), 중증 수면무호흡(<code>sample-osa</code>, AHI 약 35), 저품질 기록(<code>sample-lowquality</code>, QC C) 중 하나를 고릅니다.</li>
+              <li><b>내 기록 분석:</b> 가명 처리된 EDF 파일의 경로나 URL을 입력합니다. 입력창 아래에서 리포트 대상(임상의용 등)을 고를 수 있습니다.</li>
+            </ul>
+            <h3>2. 진행 상황 확인</h3>
+            <p>접수 → 신호 품질 확인(QC 등급) → 수면 지표 계산 → 해설 작성 순서로 진행 상황이 체크 표시와 함께 나타납니다.</p>
+          </div>
+        </div>
+
+        <h3>3. 결과 보기: 리포트 카드</h3>
+        <figure>
+          <img src="assets/img/webapp-analysis-top.png" width="1440" height="900" loading="lazy" alt="웹앱 분석 결과 화면 상단. 분석 단계 4개가 완료 표시되고, 수면 리포트 카드에 QC A 신호 품질 양호, 총 수면시간 493분, 수면 효율 92.1%, 수면 잠복기 9분, 입면 후 각성 32분, 수면 단계 비율이 표시된다. 호흡·산소 채널이 없어 AHI/ODI/T90은 비어 있다.">
+          <figcaption>화면 예시 — 수면 리포트 카드. QC 등급과 주요 수면 지표가 한눈에 보입니다. 호흡·산소 채널이 없는 기록이라 AHI/ODI/T90은 “—”로 표시됩니다.</figcaption>
+        </figure>
+
+        <h3>4. 수면 단계 그래프(하이프노그램)와 해설</h3>
+        <figure>
+          <img src="assets/img/webapp-hypnogram.png" width="1440" height="900" loading="lazy" alt="수면 단계 그래프 카드. 약 8시간 동안 각성, REM, N1, N2, N3 단계의 변화를 계단형 그래프로 보여 주고, 아래에 모델 이름과 학습 데이터 출처, 그리고 영문 해설과 전체 리포트·복사·연구자용으로 다시 쓰기·환자용으로 다시 쓰기 버튼이 있다.">
+          <figcaption>화면 예시 — 하이프노그램 아래에 모델·학습 데이터 출처와 글로 쓴 해설이 붙습니다. 해설 아래 버튼으로 전체 리포트 열기, 복사, 대상별 다시 쓰기를 할 수 있습니다.</figcaption>
+        </figure>
+
+        <h3>5. 대상에 맞게 다시 쓰기</h3>
+        <p>같은 결과를 <b>임상의용 · 연구자용 · 환자용</b>으로 다시 설명받을 수 있습니다. 해설 아래 버튼을 누르거나 “연구자용으로 다시 설명해줘”처럼 입력하세요. 연구자용 리포트는 Pro 플랜 이상에서 제공됩니다.</p>
+        <figure>
+          <img src="assets/img/webapp-researcher.png" width="1440" height="900" loading="lazy" alt="사용자가 ‘연구자용으로 다시 설명해줘’라고 입력하자, get_report 도구로 연구자용 해설이 작성되어 에포크 단위, QC 등급, 사람 판독과의 Cohen's kappa 0.673 등이 영문으로 표시된 화면.">
+          <figcaption>화면 예시 — 연구자용으로 다시 쓴 해설. 이 예시는 사람 판독 라벨이 있는 기록이라 일치도(kappa)가 함께 표시됩니다.</figcaption>
+        </figure>
+        <p>왼쪽 사이드바에서 <b>새 분석</b>, <b>요금제</b>, <b>내 계정</b>, 최근 분석 목록으로 이동할 수 있습니다.</p>
+      </section>
+
+      <section class="doc" id="connector" aria-labelledby="h-connector">
+        <h2 id="h-connector">Claude·ChatGPT 연결 <span class="badge">베타</span></h2>
+        <p>Mitosyn은 MCP(Model Context Protocol) 커넥터로 Claude와 ChatGPT에 연결할 수 있습니다. 연결하면 대화 중에 분석을 요청하고, 지원되는 환경에서는 결과가 카드 형태로 표시됩니다. 커넥터는 모든 플랜(Free 포함)에서 쓸 수 있으며, 사용량은 Mitosyn 계정 한도에 합산됩니다.</p>
+        <p>서버 주소:</p>
+        <div class="copybox"><code id="mcp-url">https://mcp.mitosyn.ai/mcp</code><button type="button" data-copy="mcp-url">복사</button></div>
+
+        <h3>Claude.ai에 연결</h3>
+        <ol class="numbered">
+          <li><b>설정 → 커넥터</b>로 이동합니다.</li>
+          <li><b>+ 추가 → 커스텀 커넥터 추가</b>를 누릅니다.</li>
+          <li>이름에 <code>Mitosyn PSG</code>, MCP 서버 URL에 <code>https://mcp.mitosyn.ai/mcp</code>를 입력하고 <b>계속</b>을 누릅니다.</li>
+          <li>목록에서 <b>연결</b>을 누르고 GitHub로 로그인합니다. Mitosyn 웹앱과 같은 GitHub 계정을 쓰세요.</li>
+        </ol>
+        <figure>
+          <img src="assets/img/claude-add-connector.png" width="536" height="471" loading="lazy" alt="Claude 설정의 ‘커스텀 커넥터 추가’ 대화상자. 이름 칸에 Mitosyn PSG가 입력되어 있고, 아래에 MCP 서버 URL 입력 칸과 취소·계속 버튼이 있다." style="max-width:536px">
+          <figcaption>Claude.ai의 ‘커스텀 커넥터 추가’ 창. 이름을 입력한 뒤 URL 칸에 서버 주소를 붙여 넣습니다.</figcaption>
+        </figure>
+        <p><b>Claude Desktop</b>은 claude.ai 계정의 커넥터 설정을 그대로 동기화하므로 따로 추가할 필요가 없습니다.</p>
+
+        <h3>ChatGPT에 연결</h3>
+        <ol class="numbered">
+          <li><b>설정 → 앱 및 커넥터 → 고급 설정</b>에서 <b>개발자 모드</b>를 켭니다.</li>
+          <li><b>만들기</b>를 누르고 URL에 <code>https://mcp.mitosyn.ai/mcp</code>를 입력, 인증 방식은 <b>OAuth</b>를 고릅니다.</li>
+          <li>GitHub로 로그인해 연결을 마칩니다.</li>
+        </ol>
+
+        <h3>이렇게 물어보세요</h3>
+        <div class="copybox"><code id="ex-prompt">데모 기록 sample-osa를 분석하고 임상의용으로 설명해줘</code><button type="button" data-copy="ex-prompt">복사</button></div>
+
+        <figure>
+          <img src="assets/img/connector-cards.png" width="1425" height="835" loading="lazy" alt="커넥터 결과 카드 예시(영문). 왼쪽은 sample-osa의 수면 리포트 카드로 QC B, 총 수면시간 371분, 수면 효율 78.4%, AHI 35.4/h(중증). 오른쪽은 sample-lowquality 카드로 QC C 품질 부족·진단 불가 경고. 아래는 하이프노그램과 SpO2 그래프.">
+          <figcaption>화면 예시 — 대화 안에 표시되는 결과 카드(영문 UI). 왼쪽: <code>sample-osa</code>, 오른쪽: <code>sample-lowquality</code>(QC C), 아래: 하이프노그램과 SpO₂.</figcaption>
+        </figure>
+
+        <h3>커넥터가 쓰는 도구</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">도구</th><th scope="col">하는 일</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><code>analyze_psg</code></th><td>가명 처리된 기록의 참조(경로·URL)를 제출하고 작업 번호(<code>job_id</code>)를 받습니다.</td></tr>
+              <tr><th scope="row"><code>get_job_status</code></th><td>진행 상태와 QC 등급을 확인합니다.</td></tr>
+              <tr><th scope="row"><code>get_metrics</code></th><td>TST, 수면 효율, 수면 잠복기, WASO, 단계별 비율, (가능한 경우) AHI·ODI·T90을 가져옵니다.</td></tr>
+              <tr><th scope="row"><code>get_report</code></th><td>임상의·연구자·환자용 해설과 리포트 링크를 가져옵니다.</td></tr>
+              <tr><th scope="row"><code>send_feedback</code></th><td>결과에 대한 평가(👍/👎)와 이유·의견을 Mitosyn 팀에 전달합니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="doc" id="data" aria-labelledby="h-data">
+        <h2 id="h-data">데이터 준비</h2>
+        <h3>지원하는 기록</h3>
+        <ul>
+          <li><b>형식:</b> EDF·BDF 파일. 일반적인 PSG 장비(예: Nox, Embla, Philips)나 웨어러블 EEG에서 내보낸 기록.</li>
+          <li><b>웨어러블 기기 파일:</b> 아래 형식을 그대로 올릴 수 있습니다. 큰 파일은 <code>.gz</code>로 압축해 올리세요(최대 2GB).</li>
+          <li><b>채널:</b> EEG 채널은 자동으로 찾아 씁니다. 움직임·호흡·심전도 채널은 수면 단계 판정에 쓰지 않습니다.</li>
+          <li><b>SpO₂(선택):</b> 산소포화도 채널이 있으면 ODI와 T90도 계산합니다.</li>
+          <li><b>AHI:</b> 호흡 이벤트 판독이 필요하므로, EEG만으로 단계를 판정한 경우에는 나오지 않습니다.</li>
+          <li><b>길이:</b> 최소 10분. 30초 단위(에포크)로 W·N1·N2·N3·REM의 5단계를 판정합니다.</li>
+        </ul>
+
+        <h3>웨어러블 기기별 올리는 방법</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">기기</th><th scope="col">내보내기</th><th scope="col">올리는 파일</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Bitbrain (Ikon Sleep 등)</th><td>전용 소프트웨어(SennsLite)에서 EDF로 내보내기</td><td>EDF</td></tr>
+              <tr><th scope="row">Muse 2 · Muse S · Muse S Athena</th><td>Muse 연구용 앱의 EDF/CSV, 또는 Mind Monitor·muse-lsl로 기록한 CSV</td><td>EDF 또는 CSV</td></tr>
+              <tr><th scope="row">BrainFlow로 직접 기록</th><td><code>DataFilter.write_file</code>로 저장한 파일</td><td>TXT/TSV — 업로드할 때 기기(Muse 2 / Muse S / Athena)를 고르세요</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>웹앱 입력창 왼쪽 <b>+</b> 메뉴의 <b>“내 기록 파일 올리기”</b>를 누르면 파일이 올라간 뒤 바로 분석이 시작됩니다. 웨어러블 2~4채널(AF7·AF8·TP9·TP10 등)도 자동으로 인식합니다.</p>
+        <div class="callout" role="note"><p>Muse·Bitbrain 기기 연동은 사용자가 직접 내보낸 파일을 올리는 방식입니다. 기기 제조사와의 공식 제휴나 인증을 뜻하지 않습니다.</p></div>
+
+        <h3>가명 처리 체크리스트</h3>
+        <p>Mitosyn에는 <b>가명 처리된 기록만</b> 올려 주세요. 업로드 전 아래를 확인하세요.</p>
+        <ul class="check">
+          <li>파일 이름과 경로에 환자 이름이 없습니다.</li>
+          <li>EDF 헤더의 환자 정보(이름, 생년월일 등) 칸을 비우거나 임의 코드로 바꿨습니다. <small>(올리면 Mitosyn이 헤더의 환자·기록 정보, 검사 일시, 주석을 한 번 더 지웁니다.)</small></li>
+          <li>주민등록번호, 의무기록번호(MRN), 이메일 주소가 어디에도 들어 있지 않습니다.</li>
+          <li>기관 내부 대응표(코드 ↔ 실제 환자)는 Mitosyn 밖에서 따로 보관합니다.</li>
+        </ul>
+        <div class="callout" role="note">
+          <strong>자동 차단</strong>
+          <p>이름, 이메일, 주민등록번호, 생년월일, 의무기록번호처럼 보이는 입력은 자동으로 거절됩니다. 거절되면 가명 처리 후 다시 시도하세요.</p>
+        </div>
+      </section>
+
+      <section class="doc" id="results" aria-labelledby="h-results">
+        <h2 id="h-results">결과 읽는 법</h2>
+        <h3>주요 지표</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">지표</th><th scope="col">뜻</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">TST<br><small>총 수면시간</small></th><td>실제로 잠든 시간의 합계입니다(각성 시간 제외).</td></tr>
+              <tr><th scope="row">SE<br><small>수면 효율</small></th><td>침대에 누워 있던 시간 중 실제로 잔 시간의 비율(%)입니다.</td></tr>
+              <tr><th scope="row">SOL<br><small>수면 잠복기</small></th><td>기록을 시작(불 끈 시점)한 뒤 처음 잠들 때까지 걸린 시간입니다.</td></tr>
+              <tr><th scope="row">WASO<br><small>입면 후 각성</small></th><td>처음 잠든 뒤 중간에 깨어 있던 시간의 합계입니다.</td></tr>
+              <tr><th scope="row">수면 단계 비율</th><td>W(각성)·N1·N2·N3(깊은 잠)·REM이 각각 차지한 비율(%)입니다.</td></tr>
+              <tr><th scope="row">AHI · ODI · T90</th><td>수면무호흡 관련 지표로, 필요한 채널이 있을 때만 표시됩니다. AHI는 호흡 이벤트 판독이 있어야 하며, ODI·T90은 SpO₂ 채널이 필요합니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><b>하이프노그램</b>은 밤사이 수면 단계가 어떻게 바뀌었는지 시간 순서로 보여 주는 계단형 그래프입니다. SpO₂ 채널이 있으면 아래에 산소포화도 그래프가 함께 표시됩니다.</p>
+        <p><b>사람 판독과의 일치도(Cohen’s kappa)</b>는 기록에 사람이 매긴 참고 라벨이 있을 때만 표시됩니다.</p>
+
+        <h3>QC(신호 품질) 등급</h3>
+        <div class="qc">
+          <div class="a"><strong>A</strong>신호 품질 양호.</div>
+          <div class="b"><strong>B</strong>경미한 잡음(아티팩트)이 있으나 사용 가능.</div>
+          <div class="c"><strong>C</strong>품질 부족 — 진단 근거로 쓰지 마세요. 재검사를 권장합니다.</div>
+        </div>
+        <p>QC 메모에는 어떤 채널이 얼마나 끊겼는지, SpO₂가 없어 계산하지 못한 지표가 무엇인지 등이 적힙니다.</p>
+
+        <h3>리포트 대상</h3>
+        <ul>
+          <li><b>임상의용:</b> 판독 검토에 필요한 지표와 소견 중심. (모든 플랜)</li>
+          <li><b>환자용:</b> 쉬운 말로 풀어 쓴 설명. (모든 플랜)</li>
+          <li><b>연구자용:</b> 판정 방법, 품질, 일치도 등 세부 정보 중심. (Pro 이상)</li>
+        </ul>
+        <div class="callout warn" role="note"><p>어떤 리포트든 자동 판독 초안입니다. 연구·의사결정 보조용이며 진단을 대체하지 않습니다. 결과는 의사가 검토해야 합니다.</p></div>
+      </section>
+
+      <section class="doc" id="pricing" aria-labelledby="h-pricing">
+        <h2 id="h-pricing">요금제와 결제</h2>
+        <p>모든 금액은 원화(KRW) 기준입니다. 무료로 시작하고 필요할 때 업그레이드하세요.</p>
+        <div class="plans">
+          <div class="plan">
+            <h3>Free</h3>
+            <p class="price">₩0</p>
+            <p class="sub">영구 무료</p>
+            <ul><li>월 5건 분석</li><li>데모 샘플 무제한</li><li>임상의·환자용 리포트</li><li>Claude·ChatGPT 커넥터</li><li>결과 7일 보관</li></ul>
+          </div>
+          <div class="plan featured">
+            <h3>Pro</h3>
+            <p class="price">₩29,000<small>/월</small></p>
+            <p class="sub">연간 결제 시 월 ₩23,000</p>
+            <ul><li>월 100건 분석</li><li>연구자용 리포트</li><li>결과 90일 보관</li><li>우선 처리</li></ul>
+          </div>
+          <div class="plan">
+            <h3>Team</h3>
+            <p class="price">₩79,000<small>/석·월</small></p>
+            <p class="sub">연간 결제 시 석당 월 ₩63,000 · 최소 3석</p>
+            <ul><li>팀 공유 월 1,000건 분석</li><li>팀 작업공간</li><li>관리자 콘솔</li><li>결과 1년 보관</li><li>이메일 지원</li></ul>
+          </div>
+          <div class="plan">
+            <h3>Enterprise</h3>
+            <p class="price">문의</p>
+            <p class="sub">영업팀 상담</p>
+            <ul><li>분석량 무제한</li><li>전용 엔진·온프레미스</li><li>SSO</li><li>감사 로그</li><li>DPA</li><li>SLA</li></ul>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">요금제 비교</caption>
+            <thead><tr><th scope="col"></th><th scope="col">Free</th><th scope="col">Pro</th><th scope="col">Team</th><th scope="col">Enterprise</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">월 요금</th><td>₩0</td><td>₩29,000</td><td>₩79,000/석</td><td>문의</td></tr>
+              <tr><th scope="row">연간 결제(월 환산)</th><td>—</td><td>₩23,000</td><td>₩63,000/석</td><td>문의</td></tr>
+              <tr><th scope="row">월 분석</th><td>5건</td><td>100건</td><td>공유 1,000건</td><td>무제한</td></tr>
+              <tr><th scope="row">데모 샘플</th><td>무제한</td><td>무제한</td><td>무제한</td><td>무제한</td></tr>
+              <tr><th scope="row">리포트</th><td>임상의·환자</td><td>+ 연구자</td><td>+ 연구자</td><td>+ 연구자</td></tr>
+              <tr><th scope="row">결과 보관</th><td>7일</td><td>90일</td><td>1년</td><td>문의</td></tr>
+              <tr><th scope="row">기타</th><td>커넥터</td><td>우선 처리</td><td>최소 3석, 팀 작업공간, 관리자 콘솔, 이메일 지원</td><td>전용 엔진·온프레미스, SSO, 감사 로그, DPA, SLA</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure>
+          <img src="assets/img/pricing.png" width="1150" height="750" loading="lazy" alt="웹앱 요금제 화면. 월간/연간 전환 버튼에서 연간이 선택되어 Free ₩0, Pro 월 ₩23,000, Team 석·월 ₩63,000, Enterprise 문의 네 개의 카드가 나란히 보인다.">
+          <figcaption>화면 예시 — 웹앱의 요금제 화면(연간 결제 선택 시 가격 표시).</figcaption>
+        </figure>
+
+        <h3>구독 관리</h3>
+        <ul>
+          <li>플랜 변경과 결제는 <b>내 계정 → 구독·결제 관리</b>에서 합니다.</li>
+          <li>분석 한도는 매월 초기화됩니다.</li>
+          <li>언제든 해지할 수 있으며, 해지해도 이미 결제한 기간이 끝날 때까지 이용할 수 있습니다.</li>
+        </ul>
+        <figure>
+          <img src="assets/img/account.png" width="930" height="315" loading="lazy" alt="내 계정 화면. 왼쪽 프로필 카드에 GitHub 계정과 로그아웃 버튼, 오른쪽 요금제 카드에 현재 플랜 Pro, 이번 달 분석 0/100건, 결과 보관 90일, 구독 상태 active, 플랜 변경·구독·결제 관리 버튼이 있다.">
+          <figcaption>화면 예시 — 내 계정. 이번 달 사용량과 보관 기간을 확인하고, 구독·결제 관리로 이동합니다.</figcaption>
+        </figure>
+      </section>
+
+      <section class="doc" id="privacy" aria-labelledby="h-privacy">
+        <h2 id="h-privacy">개인정보와 보안</h2>
+        <ul>
+          <li><b>가명 처리된 기록만 받습니다.</b> 이름, 이메일, 주민등록번호, 생년월일, 의무기록번호처럼 보이는 입력은 자동으로 거절됩니다.</li>
+          <li><b>올린 원본 파일은 분석이 끝나면 삭제합니다.</b> 분석하지 않은 업로드는 24시간 뒤 삭제됩니다. 분석 결과는 플랜의 보관 기간 동안만 보관합니다(Free 7일 · Pro 90일 · Team 1년).</li>
+          <li><b>헤더 비식별화:</b> 올린 EDF·BDF에서 환자·기록 식별 정보, 검사 일시, 자유 텍스트 주석을 지운 뒤 처리합니다.</li>
+          <li><b>내 리포트는 나만 봅니다.</b> 분석 결과와 리포트 링크는 만든 계정으로 로그인해야 열립니다(데모 샘플 제외).</li>
+          <li><b>내 데이터 권리:</b> 내 계정 → <b>데이터와 개인정보</b>에서 데이터를 내려받거나(JSON), 계정과 모든 데이터를 삭제할 수 있습니다. 삭제하면 분석 기록·결과·사용량·Claude·ChatGPT 연결이 모두 지워지고 구독은 해지됩니다.</li>
+          <li><b>모델 개선 동의(선택):</b> 가명 처리된 결과와 피드백을 모델 개선에 쓰는 것은 동의한 경우에만 하며, 언제든 철회할 수 있습니다.</li>
+          <li><b>로그인은 GitHub 계정으로</b> 합니다. Claude·ChatGPT 커넥터도 같은 GitHub 계정으로 인증합니다.</li>
+          <li><b>Enterprise</b> 고객은 SSO, 감사 로그, DPA(데이터 처리 계약), 전용 엔진·온프레미스 구성을 상담할 수 있습니다.</li>
+        </ul>
+        <p>개인정보 처리에 관한 문의는 <a href="mailto:hello@mitosyn.ai">hello@mitosyn.ai</a>로 보내 주세요. 보안 취약점 제보도 같은 주소로 받습니다.</p>
+      </section>
+
+      <section class="doc" id="feedback" aria-labelledby="h-feedback">
+        <h2 id="h-feedback">피드백과 문제 신고</h2>
+        <ul>
+          <li><b>결과마다 👍 / 👎:</b> 해설 아래 버튼으로 평가하세요. 👎를 누르면 이유(수면 단계가 틀려요, 수치가 이상해요, QC 판정이 이상해요, 해설이 어려워요, 너무 느려요)를 고르고 의견을 남길 수 있습니다. 판독 수정 의견은 모델 개선에 가장 큰 도움이 됩니다.</li>
+          <li><b>문제 신고:</b> 왼쪽 메뉴의 <b>문제 신고</b>에서 분류와 내용을 적어 보내면 접수 번호(MTS-…)를 드립니다. “진단 정보 첨부”를 켜면 현재 페이지, 최근 작업 ID, 앱 버전, 브라우저, 최근 오류 메시지가 함께 전달됩니다. 신호·결과 데이터는 포함되지 않습니다.</li>
+          <li><b>Claude·ChatGPT에서:</b> “이 결과의 수면 단계가 틀린 것 같다고 Mitosyn에 피드백 보내줘”라고 말하면 <code>send_feedback</code> 도구로 전달됩니다.</li>
+          <li><b>서비스 상태:</b> 웹앱 오른쪽 위 배지에서 분석 엔진 상태(정상 · 지연 · 점검 중)를 확인할 수 있습니다.</li>
+        </ul>
+        <div class="callout warn" role="note"><p>의견에는 환자 이름, 생년월일, 등록번호 같은 식별정보를 적지 마세요.</p></div>
+      </section>
+
+      <section class="doc" id="model" aria-labelledby="h-model">
+        <h2 id="h-model">모델과 데이터 출처</h2>
+        <p>수면 단계 판정에는 Mitosyn이 직접 개발한 모델 <b>Mitosyn staging v1</b>을 사용합니다.</p>
+
+        <h3>성능(내부 검증)</h3>
+        <ul>
+          <li>대상자 단위로 분리한 5-겹 교차검증(5-fold, subject-held-out): 정확도 <b>78.4%</b>, Cohen’s kappa <b>0.71</b></li>
+          <li>학습에 쓰지 않은 웨어러블·PSG 기록 외부 점검: kappa <b>0.46–0.67</b> (소규모, n=6)</li>
+        </ul>
+        <div class="callout warn" role="note"><p>위 수치는 <b>내부 검증</b> 결과이며 임상 검증이 아닙니다. 기록 장비와 신호 품질에 따라 성능은 달라질 수 있습니다.</p></div>
+
+        <h3>학습 데이터와 출처 표기</h3>
+        <ol class="refs">
+          <li><b>HMC Sleep Staging Database v1.1</b> — Alvarez-Estevez D, Rijsman RM. PhysioNet. 라이선스: CC BY 4.0</li>
+          <li><b>Sleep-EDF Database Expanded</b> — Kemp B et al. PhysioNet. 라이선스: ODC-By 1.0</li>
+          <li><b>PhysioNet</b> — Goldberger AL et al. “PhysioBank, PhysioToolkit, and PhysioNet.” <i>Circulation</i> 2000.</li>
+        </ol>
+      </section>
+
+      <section class="doc" id="faq" aria-labelledby="h-faq">
+        <h2 id="h-faq">자주 묻는 질문</h2>
+
+        <details class="faq">
+          <summary>Mitosyn 결과로 진단할 수 있나요?</summary>
+          <p>아니요. Mitosyn은 의료기기가 아니며 연구·의사결정 보조용입니다. 진단을 대체하지 않으며, 모든 결과는 의사의 검토가 필요합니다.</p>
+        </details>
+        <details class="faq">
+          <summary>지금 바로 쓸 수 있나요?</summary>
+          <p>현재 출시 준비 중(베타)입니다. 정식 출시 일정은 <a href="mailto:hello@mitosyn.ai">hello@mitosyn.ai</a>로 문의해 주세요.</p>
+        </details>
+        <details class="faq">
+          <summary>로그인 없이 써 볼 수 있나요?</summary>
+          <p>네. 데모 샘플(<code>sample-normal</code>, <code>sample-osa</code>, <code>sample-lowquality</code>)은 로그인 없이 체험할 수 있습니다. 내 기록을 분석하려면 GitHub로 로그인하세요.</p>
+        </details>
+        <details class="faq">
+          <summary>AHI가 “—”로 나옵니다.</summary>
+          <p>AHI는 호흡 이벤트 판독이 필요해서, EEG만으로 수면 단계를 판정한 경우에는 계산되지 않습니다. ODI·T90은 SpO₂ 채널이 있어야 나옵니다.</p>
+        </details>
+        <details class="faq">
+          <summary>QC C가 나왔어요.</summary>
+          <p>신호 품질이 부족하다는 뜻입니다. 진단 근거로 쓰지 말고 재검사를 권장합니다. QC 메모에서 어떤 채널에 문제가 있었는지 확인하세요.</p>
+        </details>
+        <details class="faq">
+          <summary>입력이 거절됐어요.</summary>
+          <p>이름·이메일·주민등록번호·생년월일·의무기록번호처럼 보이는 내용이 있으면 자동으로 거절됩니다. 파일 이름, 경로, EDF 헤더를 <a href="#data">가명 처리</a>한 뒤 다시 시도하세요.</p>
+        </details>
+        <details class="faq">
+          <summary>너무 짧은 기록도 분석되나요?</summary>
+          <p>최소 10분 이상의 기록이 필요합니다.</p>
+        </details>
+        <details class="faq">
+          <summary>커넥터로 분석해도 웹앱 사용량에 포함되나요?</summary>
+          <p>네. 같은 GitHub 계정으로 연결하면 사용량은 하나의 Mitosyn 계정 한도에 합산됩니다.</p>
+        </details>
+        <details class="faq">
+          <summary>해지하면 바로 이용이 끊기나요?</summary>
+          <p>아니요. 언제든 해지할 수 있고, 이미 결제한 기간이 끝날 때까지 이용할 수 있습니다. 내 계정 → 구독·결제 관리에서 해지합니다.</p>
+        </details>
+
+        <h3>문의</h3>
+        <p>제품, 요금제, Enterprise 상담, 개인정보 관련 문의는 <a href="mailto:hello@mitosyn.ai">hello@mitosyn.ai</a>로 보내 주세요.</p>
+
+        <footer class="site">
+          <p>© 2026 Mitosyn · Seoul · <a href="https://mitosyn.ai">mitosyn.ai</a> · <a href="mailto:hello@mitosyn.ai">hello@mitosyn.ai</a></p>
+          <p>Mitosyn은 연구·의사결정 보조용이며 진단을 대체하지 않습니다. 의료기기가 아니며, 결과는 의사의 검토가 필요합니다. 화면 이미지는 예시이며 실제 화면과 다를 수 있습니다.</p>
+        </footer>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('sidenav');
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a') && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = document.getElementById(b.getAttribute('data-copy')).textContent;
+      var done = function () { b.textContent = '복사됨'; setTimeout(function () { b.textContent = '복사'; }, 1500); };
+      if (navigator.clipboard) { navigator.clipboard.writeText(text).then(done, function () {}); }
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var links = {};
+    nav.querySelectorAll('a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && links[en.target.id]) {
+          Object.keys(links).forEach(function (k) { links[k].removeAttribute('aria-current'); });
+          links[en.target.id].setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('section.doc').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
